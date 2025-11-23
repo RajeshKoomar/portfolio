@@ -3,9 +3,19 @@ let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
 menuIcon.onclick = () => {
-    menuIcon.classList.toggle('fa-times');
+    menuIcon.querySelector('i').classList.toggle('fa-bars');
+    menuIcon.querySelector('i').classList.toggle('fa-times');
     navbar.classList.toggle('active');
 };
+
+/* Close menu when clicking outside */
+document.addEventListener('click', (e) => {
+    if (!menuIcon.contains(e.target) && !navbar.contains(e.target)) {
+        navbar.classList.remove('active');
+        menuIcon.querySelector('i').classList.remove('fa-times');
+        menuIcon.querySelector('i').classList.add('fa-bars');
+    }
+});
 
 /* Theme Toggle */
 let themeIcon = document.querySelector('#theme-icon');
@@ -65,22 +75,67 @@ const typed = new Typed('.multiple-text', {
     loop: true
 });
 
-/* Custom Cursor */
-const cursorDot = document.querySelector('[data-cursor-dot]');
-const cursorOutline = document.querySelector('[data-cursor-outline]');
+/* Enhanced Custom Cursor */
+const isTouchDevice = () => {
+    return (('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0));
+};
 
-window.addEventListener("mousemove", function (e) {
-    const posX = e.clientX;
-    const posY = e.clientY;
+if (!isTouchDevice()) {
+    const cursorDot = document.querySelector('[data-cursor-dot]');
+    const cursorOutline = document.querySelector('[data-cursor-outline]');
 
-    cursorDot.style.left = `${posX}px`;
-    cursorDot.style.top = `${posY}px`;
+    let mouseX = 0, mouseY = 0;
+    let outlineX = 0, outlineY = 0;
+    let dotX = 0, dotY = 0;
 
-    cursorOutline.animate({
-        left: `${posX}px`,
-        top: `${posY}px`
-    }, { duration: 500, fill: "forwards" });
-});
+    // Track mouse position
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    // Smooth cursor movement with lerp (linear interpolation)
+    function animateCursor() {
+        // Dot follows immediately
+        dotX = mouseX;
+        dotY = mouseY;
+
+        // Outline follows with smooth delay
+        const speed = 0.15;
+        outlineX += (mouseX - outlineX) * speed;
+        outlineY += (mouseY - outlineY) * speed;
+
+        cursorDot.style.left = dotX + 'px';
+        cursorDot.style.top = dotY + 'px';
+        cursorOutline.style.left = outlineX + 'px';
+        cursorOutline.style.top = outlineY + 'px';
+
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Add hover effect for interactive elements
+    const hoverElements = document.querySelectorAll('a, button, .btn, .skill-box, .project-box, #theme-icon, #menu-icon');
+
+    hoverElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            cursorOutline.classList.add('hover');
+        });
+
+        element.addEventListener('mouseleave', () => {
+            cursorOutline.classList.remove('hover');
+        });
+    });
+} else {
+    // Hide custom cursor on touch devices
+    const cursorDot = document.querySelector('[data-cursor-dot]');
+    const cursorOutline = document.querySelector('[data-cursor-outline]');
+    document.body.style.cursor = 'auto';
+    if (cursorDot) cursorDot.style.display = 'none';
+    if (cursorOutline) cursorOutline.style.display = 'none';
+}
 
 /* Dynamic Resume Year */
 const currentYear = new Date().getFullYear();
