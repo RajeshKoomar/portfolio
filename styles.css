@@ -95,6 +95,7 @@ section {
     padding: 10rem 9% 2rem;
 }
 
+/* Navbar with Scroll Animation */
 .header {
     position: fixed;
     top: 0;
@@ -107,6 +108,15 @@ section {
     align-items: center;
     z-index: 100;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header.nav-hidden {
+    transform: translateY(-100%);
+}
+
+.header.nav-visible {
+    transform: translateY(0);
 }
 
 .logo {

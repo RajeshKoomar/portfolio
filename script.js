@@ -25,6 +25,34 @@ themeIcon.onclick = () => {
     document.body.classList.toggle('light-mode');
 };
 
+/* Navbar Hide/Show on Scroll */
+let lastScrollTop = 0;
+const header = document.querySelector('.header');
+const scrollThreshold = 100; // Start hiding after scrolling 100px
+
+window.addEventListener('scroll', () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Only apply hide/show after scrolling past threshold
+    if (scrollTop > scrollThreshold) {
+        if (scrollTop > lastScrollTop) {
+            // Scrolling DOWN - hide navbar
+            header.classList.add('nav-hidden');
+            header.classList.remove('nav-visible');
+        } else {
+            // Scrolling UP - show navbar
+            header.classList.remove('nav-hidden');
+            header.classList.add('nav-visible');
+        }
+    } else {
+        // At top of page - always show
+        header.classList.remove('nav-hidden');
+        header.classList.add('nav-visible');
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+}, false);
+
 /* Scroll Sections Active Link */
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
