@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio of a Full Stack .NET & Angular Developer specializing in SQL Server and Hangfire automation.">
+    <title>Software Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <header class="header">
+        <a href="#" class="logo"><span class="highlight">Portfolio</span></a>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="bx bx-moon" id="theme-icon"></div>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1>Rajesh</h1>
+            <h3>And I'm a <span class="multiple-text"></span></h3>
+            <p>Full Stack Developer specializing in Angular, .NET, and SQL Server. Building robust HRMS solutions and
+                automating workflows with Hangfire.</p>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/rajeshkumar1234/" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/RajeshKoomar" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <a href="Rajesh2025.pdf" class="btn" id="download-cv" download="RajeshResume2025.pdf">Download CV</a>
+            <a href="#contact" class="btn">Contact Me</a>
+        </div>
+        <div class="home-img">
+            <!-- Placeholder for a 3D or vector image -->
+            <div class="glowing-circle">
+                <div class="image-content">
+                    <i class="fas fa-code"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <div class="about-shape"></div>
+            <i class="fas fa-user-astronaut"></i>
+        </div>
+        <div class="about-content">
+            <h2 class="heading">About <span class="highlight">Me</span></h2>
+            <h3>Full Stack Developer</h3>
+            <p>I am a passionate software developer with extensive experience in building enterprise-grade applications.
+                My expertise lies in the .NET ecosystem, coupled with modern frontend frameworks like Angular. I have a
+                strong background in database management using SQL Server and background job processing with Hangfire. I
+                love creating efficient, scalable, and user-friendly solutions.</p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <section class="experience" id="experience">
+        <h2 class="heading">My <span class="highlight">Experience</span></h2>
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Apr 2024 - Present</div>
+                <div class="timeline-content">
+                    <h3>Software Developer</h3>
+                    <p><strong>CloudPay Technologies Pvt Ltd</strong></p>
+                    <p>Developing and maintaining enterprise-grade applications focused on payroll and payment
+                        solutions. Building robust .NET Core APIs, implementing complex business logic, and creating
+                        responsive Angular interfaces. Working with SQL Server for data management and Hangfire for
+                        automated workflows and scheduled tasks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="heading">My <span class="highlight">Skills</span></h2>
+        <div class="skills-container">
+            <div class="skill-box">
+                <i class="fab fa-angular"></i>
+                <h3>Angular</h3>
+                <p>Building dynamic SPAs with modern Angular features.</p>
+            </div>
+            <div class="skill-box">
+                <i class="fas fa-code"></i>
+                <h3>.NET Core</h3>
+                <p>Robust backend API development and microservices.</p>
+            </div>
+            <div class="skill-box">
+                <i class="fas fa-database"></i>
+                <h3>SQL Server</h3>
+                <p>Complex query optimization and database design.</p>
+            </div>
+            <div class="skill-box">
+                <i class="fas fa-clock"></i>
+                <h3>Hangfire</h3>
+                <p>Reliable background job processing and mail automation.</p>
+            </div>
+            <div class="skill-box">
+                <i class="fab fa-html5"></i>
+                <h3>HTML & CSS</h3>
+                <p>Semantic markup and responsive design.</p>
+            </div>
+            <div class="skill-box">
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>Interactive logic and DOM manipulation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2 class="heading">My <span class="highlight">Projects</span></h2>
+        <div class="projects-container">
+            <div class="project-box">
+                <div class="project-info">
+                    <h4>Mobile API Gateway</h4>
+                    <p>Secure and scalable APIs for mobile application consumption.</p>
+                    <ul class="project-details">
+                        <li><i class="fas fa-check"></i> JWT Authentication</li>
+                        <li><i class="fas fa-check"></i> Optimized Data Endpoints</li>
+                        <li><i class="fas fa-check"></i> Real-time Sync</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span>.NET Core</span>
+                        <span>REST API</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-box">
+                <div class="project-info">
+                    <h4>Automated Mailer System</h4>
+                    <p>Background job system for scheduled notifications.</p>
+                    <ul class="project-details">
+                        <li><i class="fas fa-check"></i> Hangfire Integration</li>
+                        <li><i class="fas fa-check"></i> Recurring Jobs</li>
+                        <li><i class="fas fa-check"></i> Dashboard Monitoring</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span>Hangfire</span>
+                        <span>C#</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-box">
+                <div class="project-info">
+                    <h4>HRMS & Payroll System</h4>
+                    <p>Comprehensive HR solution with automated workflows.</p>
+                    <ul class="project-details">
+                        <li><i class="fas fa-check"></i> Leave, Attendance & Compliance</li>
+                        <li><i class="fas fa-check"></i> Salary, Payslip, Form B & C</li>
+                        <li><i class="fas fa-check"></i> Email Automation</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span>.NET Core</span>
+                        <span>SQL Server</span>
+                        <span>Hangfire</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span class="highlight">Me</span></h2>
+        <div style="text-align: center; padding: 5rem 0;">
+            <a href="mailto:rajeshk01032000@gmail.com"
+                style="font-size: 3rem; color: var(--text-color); display: inline-flex; align-items: center; gap: 1.5rem;">
+                <i class="fas fa-envelope" style="color: var(--main-color); font-size: 4rem;"></i>
+                rajeshk01032000@gmail.com
+            </a>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
